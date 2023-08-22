@@ -52,6 +52,9 @@ public class OfferService {
         return receivedOffers;
     }
 
+    /*
+    creates and offer for an account with validation checks on limits
+     */
     public Offer createOffer(OfferCreationDTO offerCreationDTO) throws InvalidDateFormatException, NoAccountFoundException, LimitExceededException {
 
         String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
@@ -96,6 +99,9 @@ public class OfferService {
         return offerRepository.save(offer);
     }
 
+    /*
+    Updates the offer and account after accepting an active offer
+     */
     public Offer updateOffer(UpdateOfferStatusDTO offerStatusDTO) throws NoAccountFoundException, NoOffersFoundException, OfferAlreadyExpiredException {
         LocalDateTime ldt = LocalDateTime.now();
         String dateNow = (DateTimeFormatter.ISO_DATE_TIME).format(ldt);

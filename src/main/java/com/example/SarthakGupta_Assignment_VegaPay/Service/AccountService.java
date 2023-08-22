@@ -56,6 +56,9 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
+    /*
+    Updates account limit after accepting an active offer
+     */
     public Account updateAccountLimit(AccountLimitUpdateDTO accountLimitUpdateDTO) throws NoAccountFoundException {
         Optional<Account> receivedAccount = accountRepository.findById(accountLimitUpdateDTO.getAccountId());
         if(receivedAccount.isEmpty()) {
