@@ -1,0 +1,12 @@
+server:
+  port: 8093
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: admin
+    url: jdbc:postgresql://localhost:5432/vegapay_assign
+    username: admin
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
